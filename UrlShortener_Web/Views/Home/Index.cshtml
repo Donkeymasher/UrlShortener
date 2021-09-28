@@ -1,0 +1,16 @@
+﻿<div class="UrlShortenForm d-flex flex-column align-items-center">
+    
+    <form class="p-2" method="post" data-ajax="true" data-ajax-method="post" data-ajax-url="Home/ShortenUrl" data-ajax-failure="UrlShortenFailure" data-ajax-success="UrlShortenSuccess">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">URL: </span>
+            <input id="txtUrl" name="url" class="form-control" placeholder="URL" aria-label="URL" required type="url"/>
+            <button id="btnSubmitUrl" type="submit" class="btn btn-success">Shorten</button>
+        </div>
+    </form>
+
+    <div id="DisplayWrapper" class="p-2 alert" style="display:none">
+        <span id="UrlDisplay"></span>
+        <i class="bi bi-clipboard"></i>
+        <span id="copy_tooltip" aria-live="assertive" role="tooltip"></span>
+    </div>
+</div>
