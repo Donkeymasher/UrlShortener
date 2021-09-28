@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UrlShortner.Services.Data.DatabaseModels;
-using UrlShortner.Services.Data.Interfaces;
+using UrlShortener.Services.Data.DatabaseModels;
+using UrlShortener.Services.Data.Interfaces;
 
-namespace UrlShortner.Services.Data
+namespace UrlShortener.Services.Data
 {
     public class UrlShorteningContext : DbContext, IUrlShorteningContext
     {

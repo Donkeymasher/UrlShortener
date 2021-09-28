@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Internal;
-using UrlShortner.Services.Data;
-using UrlShortner.Services.Data.Factories;
-using UrlShortner.Services.Data.Repositories;
+﻿using UrlShortener.Services.Data.Factories;
+using UrlShortener.Services.Data;
+using UrlShortener.Services.Data.Repositories;
 
 namespace UrlShortener.Services.Data.Helpers
 {

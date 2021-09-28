@@ -1,35 +1,30 @@
 ﻿using System;
-using UrlShortner.Services.Data.Factories;
+using UrlShortener.Services.Data.Factories;
 
-namespace UrlShortner.Services.Data
+namespace UrlShortener.Services.Data
 {
     public class UnitOfWork : IDisposable
     {
-        private readonly UrlShorteningContext _context;
-
         public UnitOfWork(ContextFactory contextFactory)
         {
-            _context = contextFactory.CreateDbContext();
+            Context = contextFactory.CreateDbContext();
         }
 
         public UnitOfWork(UrlShorteningContext context)
         {
-            _context = context;
+            Context = context;
         }
 
         public int Save()
         {
-            return _context.SaveChanges();
+            return Context.SaveChanges();
         }
 
-        public UrlShorteningContext Context
-        {
-            get { return _context; }
-        }
+        public UrlShorteningContext Context { get; }
 
         public void Dispose()
         {
-            _context.Dispose();
+            Context.Dispose();
         }
     }
 }

@@ -5,10 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using UrlShortener.Services.Data.Helpers;
-using UrlShortner.Services.Data.Configuration;
-using UrlShortner.Services.Data.Factories;
+using UrlShortener.Services.Data.Configuration;
+using UrlShortener.Services.Data.Factories;
 
-namespace UrlShortner
+namespace UrlShortener
 {
     public class Startup
     {

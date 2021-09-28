@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace UrlShortner
+namespace UrlShortener
 {
     public class Program
     {

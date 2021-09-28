@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace UrlShortner.Services.Data.DatabaseModels
+namespace UrlShortener.Services.Data.DatabaseModels
 {
     public class ShortenedUrl
     {

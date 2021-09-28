@@ -4,11 +4,11 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using UrlShortener.Services.Data.Helpers;
-using UrlShortner.Controllers;
-using UrlShortner.Services.Data.DatabaseModels;
-using UrlShortner.Services.Data.Repositories;
+using UrlShortener.Controllers;
+using UrlShortener.Services.Data.DatabaseModels;
+using UrlShortener.Services.Data.Repositories;
 
-namespace UrlShortnerUnitTestProject
+namespace UrlShortenerUnitTestProject
 {
     public class HomeControllerTests
     {

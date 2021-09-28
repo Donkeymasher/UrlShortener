@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UrlShortner.Exceptions
+namespace UrlShortener.Exceptions
 {
     public class InvalidUrlException : Exception
     {

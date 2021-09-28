@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UrlShortner.Services.Data.DatabaseModels;
+using UrlShortener.Services.Data.DatabaseModels;
 
-namespace UrlShortner.Services.Data.Repositories
+namespace UrlShortener.Services.Data.Repositories
 {
     public class ShortenedUrlRepository : IShortenedUrlRepository
     {
@@ -13,17 +13,6 @@ namespace UrlShortner.Services.Data.Repositories
         public ShortenedUrlRepository(UnitOfWork uow)
         {
             context = uow.Context;
-        }
-
-        public List<ShortenedUrl> Get()
-        {
-            return context.ShortenedUrls.ToList();
-        }
-
-        public ShortenedUrl Find(string url)
-        {
-            return context.ShortenedUrls
-                .FirstOrDefault(x => x.OriginalUrl == url);
         }
 
         public ShortenedUrl Find(int id)

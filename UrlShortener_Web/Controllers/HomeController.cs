@@ -3,11 +3,11 @@ using Microsoft.Extensions.Logging;
 using System;
 using UrlShortener.Resources;
 using UrlShortener.Services.Data.Helpers;
-using UrlShortner.Exceptions;
-using UrlShortner.Services.Data.DatabaseModels;
-using UrlShortner.Services.Data.Repositories;
+using UrlShortener.Exceptions;
+using UrlShortener.Services.Data.DatabaseModels;
+using UrlShortener.Services.Data.Repositories;
 
-namespace UrlShortner.Controllers
+namespace UrlShortener.Controllers
 {
     public class HomeController : BaseController
     {

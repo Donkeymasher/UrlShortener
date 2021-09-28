@@ -1,4 +1,4 @@
-﻿using UrlShortner.Services.Data.Repositories;
+﻿using UrlShortener.Services.Data.Repositories;
 
 namespace UrlShortener.Services.Data.Helpers
 {

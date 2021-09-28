@@ -1,7 +1,7 @@
-﻿namespace UrlShortner.Services.Data.Configuration
+﻿namespace UrlShortener.Services.Data.Configuration
 {
     public class ConnectionStrings
     {
-        public string UrlStore { get; set; }
+        public string SQLServer { get; set; }
     }
 }

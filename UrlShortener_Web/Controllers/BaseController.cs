@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using UrlShortner.Exceptions;
 
-namespace UrlShortner.Controllers
+namespace UrlShortener.Controllers
 {
     public class BaseController : Controller
     {

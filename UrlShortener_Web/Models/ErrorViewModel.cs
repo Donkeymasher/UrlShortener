@@ -1,6 +1,6 @@
 using System;
 
-namespace UrlShortner.Models
+namespace UrlShortener.Models
 {
     public class ErrorViewModel
     {

@@ -4,9 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using UrlShortner.Services.Data.DatabaseModels;
+using UrlShortener.Services.Data.DatabaseModels;
 
-namespace UrlShortner.Services.Data.Interfaces
+namespace UrlShortener.Services.Data.Interfaces
 {
     public interface IUrlShorteningContext: IDisposable, IAsyncDisposable, IInfrastructure<IServiceProvider>, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService
     {

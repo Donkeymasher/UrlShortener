@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using UrlShortner.Services.Data.Configuration;
+using UrlShortener.Services.Data.Configuration;
 
-namespace UrlShortner.Services.Data.Factories
+namespace UrlShortener.Services.Data.Factories
 {
     public class ContextFactory 
     {
@@ -16,7 +16,7 @@ namespace UrlShortner.Services.Data.Factories
         public UrlShorteningContext CreateDbContext()
         {
             var optionsBuilder = new DbContextOptionsBuilder<UrlShorteningContext>();
-            optionsBuilder.UseSqlServer(_connectionString.UrlStore);
+            optionsBuilder.UseSqlServer(_connectionString.SQLServer);
 
             return new UrlShorteningContext(optionsBuilder.Options);
         }
