@@ -23,7 +23,7 @@ namespace UrlShortener
         {
             services.AddOptions<ConnectionStrings>().Configure<IConfiguration>((settings, configuration) =>
             {
-                configuration.GetSection("ConnectionStrings").Bind(settings);
+                settings.SQLServer = configuration.GetConnectionString("SQLServer");
             });
 
             services.AddSingleton<ContextFactory>().Configure<IOptions<ConnectionStrings>>((configuration) =>
