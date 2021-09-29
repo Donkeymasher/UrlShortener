@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'UrlShorts'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_97BA707295E04A289584AE29A13D0A57 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_607670FA567C4DB3B48D59AD7E5F4C02 }}
           package: .
