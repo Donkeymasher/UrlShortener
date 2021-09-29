@@ -21,6 +21,12 @@ namespace UrlShortener.Services.Data.Repositories
                 .FirstOrDefault(x => x.ShortenedUrlId == id);
         }
 
+        public ShortenedUrl Find(string url)
+        {
+            return context.ShortenedUrls
+                .FirstOrDefault(x => x.OriginalUrl == url);
+        }
+
         public ShortenedUrl InsertOrUpdate(ShortenedUrl entity)
         {
             if (entity.ShortenedUrlId == default)

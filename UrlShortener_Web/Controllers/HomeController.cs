@@ -29,11 +29,7 @@ namespace UrlShortener.Controllers
                 }
                 else
                 {
-                    using (IShortenedUrlRepository shortenedUrlRepository = _repositoryAccessHandler.AccessShortenedUrls())
-                    {
-                        string originalUrl = shortenedUrlRepository.Find(ShortenedUrl.GetIdFromUrlToken(shortenedUrlToken)).OriginalUrl;
-                        return Redirect(originalUrl);
-                    }
+                    return Redirect(GetUrlFromToken(shortenedUrlToken));
                 }
             }
             catch (Exception exception)
@@ -48,11 +44,11 @@ namespace UrlShortener.Controllers
         {
             try
             {
-                ShortenedUrl result;
+                ShortenedUrl result = new ShortenedUrl();
 
-                using (var shortenedUrlRepository = _repositoryAccessHandler.AccessShortenedUrls())
+                if(IsUrlUnique(url, out result))
                 {
-                    result = shortenedUrlRepository.InsertOrUpdate(new ShortenedUrl { OriginalUrl = GetValidUrl(url).AbsoluteUri });
+                    result = AddNewUrl(url);
                 }
 
                 return Json(new { shortenedUrlToken = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/{result.GetUrlToken()}" });
@@ -87,5 +83,42 @@ namespace UrlShortener.Controllers
 
             throw new InvalidUrlException("Invalid URL");
         }
+    
+        private ShortenedUrl AddNewUrl(string url)
+        {
+            ShortenedUrl result;
+
+            using (var shortenedUrlRepository = _repositoryAccessHandler.AccessShortenedUrls())
+            {
+                result = shortenedUrlRepository.Find(url);
+
+                if (result == null)
+                {
+                    result = shortenedUrlRepository.InsertOrUpdate(new ShortenedUrl { OriginalUrl = GetValidUrl(url).AbsoluteUri });
+                }            
+            }
+
+            return result;
+        }
+
+        private bool IsUrlUnique(string url, out ShortenedUrl result)
+        {
+            using (var shortenedUrlRepository = _repositoryAccessHandler.AccessShortenedUrls())
+            {
+                result = shortenedUrlRepository.Find(GetValidUrl(url).AbsoluteUri);
+
+                return (result == null);
+            }        
+        }
+    
+        private string GetUrlFromToken(string shortenedUrlToken)
+        {
+            using (IShortenedUrlRepository shortenedUrlRepository = _repositoryAccessHandler.AccessShortenedUrls())
+            {
+                string originalUrl = shortenedUrlRepository.Find(ShortenedUrl.GetIdFromUrlToken(shortenedUrlToken)).OriginalUrl;
+                return originalUrl;
+            }
+        }
+    
     }
 }
